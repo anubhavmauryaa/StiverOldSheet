@@ -28,7 +28,6 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
-import { ProgressProvider } from "./contexts/ProgressContext";
 import { DSAProgressProvider, useDSAProgress } from "./contexts/DSAProgressContext";
 
 // Theme Context
@@ -976,15 +975,13 @@ function AppContent() {
 function App() {
   return (
     <AuthProvider>
-      <ProgressProvider>
-        <DSAProgressProvider>
-          <ThemeProvider>
-            <Router>
-              <AppRouter />
-            </Router>
-          </ThemeProvider>
-        </DSAProgressProvider>
-      </ProgressProvider>
+      <DSAProgressProvider>
+        <ThemeProvider>
+          <Router>
+            <AppRouter />
+          </Router>
+        </ThemeProvider>
+      </DSAProgressProvider>
     </AuthProvider>
   );
 }
