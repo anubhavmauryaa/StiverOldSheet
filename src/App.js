@@ -840,15 +840,27 @@ function AppContent() {
       isDark ? "bg-gray-900" : "bg-gray-50"
     }`}>
       <div className="container mx-auto  px-4 py-6 max-w-7xl">
-        {/* Header */}
+        
+        <div className="flex items-center justify-end mb-4">
+                        <button
+                onClick={toggleTheme}
+                className={`p-2 rounded-lg font-medium transition-colors ${
+                  isDark
+                    ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
+                title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              >
+                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
+      </div>
 
-          <div className="flex items-center justify-end mb-4">
+        {/* Header 
+
             
             <div className="flex items-center space-x-2">
-                {/*check authentication status*/}
               {isAuthenticated ? (
                 <>
-                  {/* User Info */}
                   <div className={`flex items-center space-x-3 px-4 py-2 rounded-lg ${
                     isDark 
                       ? "bg-gray-700 text-gray-300" 
@@ -858,7 +870,6 @@ function AppContent() {
                     <span className="font-medium">Welcome, {user?.name || 'User'}</span>
                   </div>
                   
-                  {/* Logout Button */}
                   <button
                     onClick={handleLogout}
                     className={`p-2 rounded-lg font-medium transition-colors ${
@@ -873,7 +884,6 @@ function AppContent() {
                 </>
               ) : (
                 <>
-                  {/* Login/Signup Buttons for non-authenticated users */}
                   <a
                     href="/login"
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
@@ -893,22 +903,11 @@ function AppContent() {
                 </>
               )}
               
-              {/* Theme Toggle Button */}
-              <button
-                onClick={toggleTheme}
-                className={`p-2 rounded-lg font-medium transition-colors ${
-                  isDark
-                    ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-                title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-              >
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
+
               
             </div>
           </div>
-
+        */}
 
 
 
