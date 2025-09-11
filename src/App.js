@@ -519,7 +519,7 @@ const StepSection = ({
   viewType = "table"
 }) => {
   const { isDark } = useTheme();
-  const [isExpanded, setIsExpanded] = useState(index === 0);
+  const [isExpanded, setIsExpanded] = useState(false);
   const totalTopics = step.sub_steps.reduce(
     (sum, subStep) => sum + subStep.topics.length,
     0
