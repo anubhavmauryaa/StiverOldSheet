@@ -23,7 +23,7 @@ export const DSAProgressProvider = ({ children }) => {
     currentStreak: 0,
     longestStreak: 0
   });
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
 
   // Load DSA data from local JSON
   useEffect(() => {

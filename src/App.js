@@ -21,12 +21,12 @@ import {
   User,
 } from "lucide-react";
 import "./App.css";
-import courseData from "./data.json";
+// ...existing code...
 
 // Import components
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import ProtectedRoute from "./components/ProtectedRoute";
+// ...existing code...
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { DSAProgressProvider, useDSAProgress } from "./contexts/DSAProgressContext";
 
@@ -157,7 +157,9 @@ const TopicRow = ({
               target="_blank"
               rel="noopener noreferrer"
               className="text-orange-500 hover:text-orange-600"
-            ></a>
+            >
+              <span className="sr-only">External Link</span>
+            </a>
           )}
         </div>
       </td>
@@ -288,7 +290,8 @@ const TopicRow = ({
               src="https://dmmy6mpbxgeck.cloudfront.net/68b82ab2-3e36-4428-aa21-6e5e2cd407c5/widget/8f96fa5f-3a91-4de7-8881-c62376b37acf"
               width="100%"
               height="100%"
-            ></img>
+              alt="Coding Ninjas Widget"
+            />
           </a>
         ) : (
           <span className="text-gray-400">-</span>
